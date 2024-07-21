@@ -39,6 +39,10 @@ class Program{
 
     Sort.QuickSort(array, 0, array.Length - 1);
 
+    int[] testArray = {1, 8, 9, 10, 37, 5, 15, 3};
+
+    Sort.LinearSearch(testArray, 200);
+
 
 }
 }

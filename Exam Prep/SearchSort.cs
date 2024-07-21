@@ -100,9 +100,18 @@ public static void InsertionSort(int[] array){
 
 }
 
+/* Quick Sort
+1. Choose a value in the array to be the pivot element
+2. Order the rest of the array so that the lower values than the pivot element are on the left, and higher
+values are on the right.
+3. Swap the pivot element with the first element of the higher values so that the pivot element lands 
+inbetwen the lower and higher values
+4. do the same operations recursively for the sub arrays on the left and right side of the pivot element.
+*/
 public static void QuickSort(int[] array, int low, int high){
-
+    //check to make sure the low and high values are as such
     if(low<high){
+        //call the partition method to divide array and get pivot point
         int pivot = Partition(array, low, high);
         QuickSort(array, low, pivot -1);
         QuickSort(array, pivot +1, high);
@@ -111,10 +120,12 @@ public static void QuickSort(int[] array, int low, int high){
 
 
 public static int Partition(int[] array, int low, int high){
-
+    //set pivot equal to the highest value
     int pivot = array[high];
     int i = low -1;
 
+    //Split the array in two. Loop that checks if the current value is lower than the pivot and swaps them. 
+    //Lower values, so gets put to the left
     for(int j = low; j < high; j++){
         if(array[j] <= pivot){
             i++;
@@ -124,11 +135,29 @@ public static int Partition(int[] array, int low, int high){
         }
     }
 
+    //Check the other half of the split array and swaps around the pivot point. Returns the pivot point
     int temp = array[i+1];
     array[i+1] = array[high];
     array[high] = temp;
     return i+1;
 
+}
+
+//I believe this one is pretty self explanitory...
+public static void LinearSearch(int[]array, int val){
+    //Loop that compares each element of the array to the value that we want to find
+    for(int i = 0; i < array.Length; i++){
+        //If the value is found, say so
+        if(array[i] == val){
+            Console.WriteLine("Found!");
+            return;
+        }
+    }
+    //if the value is not found, say so
+    Console.WriteLine("Element does not exist in this list");
+
+
+    //this method can also be made a simple public bool but I just went autopilot and did a static void instead kekw
 }
 
 }
