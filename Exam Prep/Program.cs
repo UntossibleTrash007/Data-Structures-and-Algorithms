@@ -39,9 +39,9 @@ class Program{
 
     Sort.QuickSort(array, 0, array.Length - 1);
 
-    int[] testArray = {1, 8, 9, 10, 37, 5, 15, 3};
+    int[] testArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-    Sort.LinearSearch(testArray, 200);
+    Sort.BinarySearch(testArray, 3);
 
 
 }

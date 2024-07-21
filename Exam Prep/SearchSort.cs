@@ -160,4 +160,30 @@ public static void LinearSearch(int[]array, int val){
     //this method can also be made a simple public bool but I just went autopilot and did a static void instead kekw
 }
 
+/*Binary Search
+1. Check the value in the center of the array
+2. If the target value is lower search the left half of the array. if the target is higher, search the right
+3. Continue step 1 and two for the new reduced part of the array until the target value is found
+***ONLY WORKS WITH PRESORTED ARRAYS!!!***
+*/
+public static void BinarySearch(int[] array, int val){
+    int left = 0;
+    int right = array.Length -1;
+
+    while(left < right){
+        int mid = (left + right)/2;
+        if(array[mid] == val){
+            Console.WriteLine("Found!");
+            return;
+        } else if(array[mid] < val){
+            left = mid+1;
+        } else if(array[mid] > val){
+            right = mid-1;
+        }
+    }
+
+    Console.WriteLine("Element does not exist in the array.");
+    
+}
+
 }
