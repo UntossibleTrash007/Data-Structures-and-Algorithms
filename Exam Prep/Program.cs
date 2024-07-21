@@ -27,7 +27,7 @@ class Program{
 
     /*O(n) time complexity due to the for loop being a linear function*/
 
-    SelectionSort(array);
+    InsertionSort(array);
 }
 
 
@@ -94,6 +94,40 @@ public static void SelectionSort(int[] array){
     for(int i = 0; i < array.Length; i++){
         Console.WriteLine(array[i]);
     }
+}
+
+public static void InsertionSort(int[] array){
+    /*Insertion Sort
+    1. Take the first value from the unsorted part of the array
+    2. Move the value into the correct place in the sorted part of the array
+    3. go through the unsorted part of the array again as many times as there are values.
+    */
+
+    //Loop denoting how many times the array gets itterated through
+    for(int i = 0; i < array.Length; i++){
+        //insertIndex denotes the index of the value we are currently looking at
+        //current denotes the value we are currently looking at
+        //j denotes the previous element in the array that we compare current to to determine a swap
+        int insertIndex = i;
+        int current = array[i];
+        int j = i-1;
+
+        //The loop that checks the unsorted portion of the array to determine which values get switched
+        while(j >=0 && array[j] > current){
+            array[j+1] = array[j];
+            insertIndex = j;
+            j--;
+        }
+
+        //Swap the elements
+        array[insertIndex] = current;
+    }
+
+    Console.WriteLine("the sorted array:");
+    for(int i = 0; i < array.Length; i++){
+        Console.WriteLine(array[i]);
+    }
+
 }
 
 }
