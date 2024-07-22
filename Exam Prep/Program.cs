@@ -46,7 +46,7 @@ public class Program{
 
     //LinkedList testing
 
-    LinkedList<int> test = new();
+   /* LinkedList<int> test = new();
     LinkedList<int> test2 = new();
 
     //AddBack Implementation
@@ -81,7 +81,19 @@ public class Program{
     Console.WriteLine("values in the test list:");
     foreach(var num in test){
         Console.WriteLine(num);
-    }
+    }*/
+
+    //Stack testing!
+    Stacks<string> test = new Stacks<string>();
+
+    test.Push(new Node<string>("Minecraft"));
+    test.Push(new Node<string>("LittleBigPlanet"));
+    Console.WriteLine(test.Peek());
+    test.Pop();
+    Console.WriteLine(test.Peek());
+
+    //Programer's note: this is progress as of 2024/07/22. I'll finish testing tomorrow :)))
+
 
 
 }
