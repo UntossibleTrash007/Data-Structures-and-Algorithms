@@ -1,7 +1,5 @@
-﻿using System;
-using StudyNotes;
-namespace StudyNotes;
-
+﻿namespace StudyNotes;
+using System.Collections;
 public class Program{
     static void Main(string[] args){
 
@@ -103,6 +101,21 @@ public class Program{
     Console.WriteLine(line.Peek());
     line.Dequeue();
     Console.WriteLine(line.Peek());
+
+    Hashtable hash = new Hashtable();
+
+    hash.Add(1, "Joey");
+    hash.Add(2, "metaphor");
+    hash.Add(3, "Rowan");
+    hash.Add(4, "Tiny");
+
+    foreach(DictionaryEntry val in hash){
+        Console.WriteLine($"Key: {val.Key}, Name: {val.Value}");
+    }
+
+
+    
+
 
 }
 }
