@@ -93,8 +93,16 @@ public class Program{
     Console.WriteLine(test.Peek());
 
     //Programer's note: this is progress as of 2024/07/22. I'll finish testing tomorrow :)))
+    
+    //Programmer's other note, decided to implement queues tonight, will finish testing for both tomorrow
+    Queue<string> line = new Queue<string>();
 
-
+    line.Enqueue(new Node<string>("Joey"));
+    line.Enqueue(new Node<string>("Metaphor"));
+    line.Enqueue(new Node<string>("Tiny"));
+    Console.WriteLine(line.Peek());
+    line.Dequeue();
+    Console.WriteLine(line.Peek());
 
 }
 }
